@@ -60,7 +60,7 @@ main-build: RTOS.elf secondary-outputs
 RTOS.elf: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GNU Arm Cross C Linker'
-	arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -ffreestanding -g3 -T".././linkerpico_memmap.ld" -nostartfiles -Xlinker --gc-sections -Wl,-Map,"RTOS.map" -o "RTOS.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -ffreestanding -g3 -T "../linker/pico_memmap.ld" -nostartfiles -Xlinker --gc-sections -Wl,-Map,"RTOS.map" -o "RTOS.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
