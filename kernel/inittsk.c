@@ -31,6 +31,7 @@ int main(void)
     tskid_ini = tk_cre_tsk(&ctsk_ini);              // 初期タスク生成
     tk_sta_tsk(tskid_ini, 0);                       // 初期タスク実行
 	//tm_com_init();
+    // テスト用送信
     tm_putstring("Strat main program\n");
 
      while(1);      // ここは実行されない
